@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Movie Ticket Booking</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      margin: 0;
+      padding: 20px;
+    }
+    *{
+    margin: 0%;
+    padding: 0%;
+  }
+
+    h1, h2 {
+      color: #333;
+    }
+    .movie {
+      background: #fff;
+      padding: 15px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      margin-top: 20px;
+    }
+    .img{
+      width: 100px;
+    }
+    select, button {
+      padding: 8px;
+      margin-top: 10px;
+      margin-right: 10px;
+    }
+    .seats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 15px;
+    }
+    .seat {
+      width: 30px;
+      height: 30px;
+      background: #ccc;
+      text-align: center;
+      line-height: 30px;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+    .seat.selected {
+      background: #4caf50;
+      color: #fff;
+    }
+    .seat.booked {
+      background: #e53935;
+      cursor: not-allowed;
+    }
+    button{
+      background-color: red;
+      border-radius: 5px;
+      border: red;
+      margin-top: 20px;
+      width: 100px;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+      <div class="movie">
+    <h2>Sanam Teri Kasam</h2>
+    <img  src="https://assets-in.bmscdn.com/iedb/movies/images/mobile/thumbnail/xlarge/sanam-teri-kasam-et00036895-1730964847.jpg">
+    <p>Re-releasing on 7th Feb, this heartfelt drama follows Inder, a rugged lone wolf stuck in an unfulfilling relationship, and Saru, a shy librarian who has faced countless rejections. <br> Fate brings them together when Saraswati is thrown out of her home, and Inder becomes her unwavering support.  As their bond deepens, love blossoms,  but destiny has other plans, <br> testing their love in unexpected ways.</p>
+
+    <label for="showtime">Select Showtime:</label>
+    <select id="showtime">
+      <option>10:00 AM</option>
+      <option>1:00 PM</option>
+      <option>4:00 PM</option>
+      <option>7:00 PM</option>
+    </select>
+
+    <h3>Select Seats:</h3>
+    <div class="seats" id="seats"></div>
+
+    <button onclick="bookSeats()">Book Now</button>
+
+  </div>
+
+  <script>
+    const seatContainer = document.getElementById('seats');
+    const totalSeats = 30;
+    const bookedSeats = [2, 5, 11]; 
+    const selectedSeats = new Set();
+
+    for (let i = 1; i <= totalSeats; i++) {
+      const seat = document.createElement('div');
+      seat.classList.add('seat');
+      seat.textContent = i;
+      if (bookedSeats.includes(i)) {
+        seat.classList.add('booked');
+      } else {
+        seat.addEventListener('click', () => {
+          seat.classList.toggle('selected');
+          if (selectedSeats.has(i)) {
+            selectedSeats.delete(i);
+          } else {
+            selectedSeats.add(i);
+          }
+        });
+      }
+      seatContainer.appendChild(seat);
+    }
+
+    function bookSeats() {
+      if (selectedSeats.size === 0) {
+        alert('Please select at least one seat.');
+        return;
+      }
+      else{
+        alert('Seat has been booked successfully.');
+      }
+    }
+  </script>
+</body>
+</html>

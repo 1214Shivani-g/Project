@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Movie Ticket Booking</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      margin: 0;
+      padding: 20px;
+    }
+   
+    h1, h2 {
+      color: #333;
+    }
+    .movie {
+      background: #fff;
+      padding: 15px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+   
+    select, button {
+      padding: 8px;
+      margin-top: 10px;
+      margin-right: 10px;
+    }
+    .seats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 15px;
+    }
+    .seat {
+      width: 30px;
+      height: 30px;
+      background: #ccc;
+      text-align: center;
+      line-height: 30px;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+    .seat.selected {
+      background: #4caf50;
+      color: #fff;
+    }
+    .seat.booked {
+      background: #e53935;
+      cursor: not-allowed;
+    }
+    button{
+      background-color: red;
+      border-radius: 5px;
+      border: red;
+      margin-top: 20px;
+      width: 100px;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+     <div class="movie">
+    <h2>Minecraft</h2>
+    <img  src="https://assets-in.bmscdn.com/iedb/movies/images/mobile/thumbnail/xlarge/a-minecraft-movie-et00410687-1743159588.jpg">
+    <p>Welcome to the world of Minecraft, where creativity isn`t just a tool-it`s key to survival! Four misfits find themselves grappling with everyday challenges when they are suddenly pulled through a mysterious <br> portal into the Overworld-a bizarre, cubic wonderland fueled by imagination. <br> To return home, they must navigate this unfamiliar realm, master its mechanics, and fend off threats like Piglins and Zombies. Guided by an unexpected expert crafter, their journey will test their courage and push them <br> to rediscover the unique creativity that will help them thrive. Not just in this world, but in their own.</p>
+
+    <label for="showtime">Select Showtime:</label>
+    <select id="showtime">
+      <option>10:00 AM</option>
+      <option>1:00 PM</option>
+      <option>4:00 PM</option>
+      <option>7:00 PM</option>
+    </select>
+
+    <h3>Select Seats:</h3>
+    <div class="seats" id="seats"></div>
+
+    <button onclick="bookSeats()">Book Now</button>
+  </div>
+
+  <script>
+    const seatContainer = document.getElementById('seats');
+    const totalSeats = 30;
+    const bookedSeats = [3, 9, 18];
+    const selectedSeats = new Set();
+
+    for (let i = 1; i <= totalSeats; i++) {
+      const seat = document.createElement('div');
+      seat.classList.add('seat');
+      seat.textContent = i;
+      if (bookedSeats.includes(i)) {
+        seat.classList.add('booked');
+      } else {
+        seat.addEventListener('click', () => {
+          seat.classList.toggle('selected');
+          if (selectedSeats.has(i)) {
+            selectedSeats.delete(i);
+          } else {
+            selectedSeats.add(i);
+          }
+        });
+      }
+      seatContainer.appendChild(seat);
+    }
+
+    function bookSeats() {
+      if (selectedSeats.size === 0) {
+        alert('Please select at least one seat.');
+        return;
+      }
+      else{
+        alert('Seat has been booked successfully.');
+    }
+  }
+    
+  </script>
+</body>
+</html>

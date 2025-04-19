@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Amateur - BookMyShow</title>
+    
+    <style>
+    *{
+    margin: 0%;
+    padding: 0%;
+  }
+
+.fnav{
+    display: flex;
+    height: 80px;
+    width: 100%;
+}
+.fnav .left{
+    display: flex;
+    margin-left: 1%;
+    height: 70px;
+    width: 50%;
+}
+.left img{
+    width: 50%;
+    height: 80%; 
+    margin-top: 11px;
+    margin-bottom: 10px;
+    margin-left: 30px;
+    margin-right: 10px;
+    justify-content: left;
+}
+.searchbar{
+    display: flex;
+    margin-top: 18px;
+    height: 30px;
+    width: 500px;
+    margin-left: 10px;
+    align-items: center;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+.icon{
+    font-family: 15px;
+    align-items: center;
+    margin-left: 5px;
+}
+input{
+    margin-left: 5px;
+    height: 28px;
+    width: 455px;
+    border: none;
+}
+/* .left i{
+    display: flex;
+    height: 38px;
+    width: 45px;
+    justify-content: center;
+    align-items: center;
+    margin-left: 30px;
+    /* margin-top: 30px;
+    margin-inline: 22px;
+    font-size: 22px; */
+/* } */
+
+/* .left input{
+    display: flex;
+    margin-left: 10px; */ */
+    /* padding-left: 30px;
+    margin-left: 20px;
+    width:550px;
+    height: 30%;
+    outline: none; 
+    margin-top: 29px;
+    border-radius: 2px; 
+} */
+    .fnav .right{
+    display: flex;
+    height: 70px;
+    width: 50%; 
+    justify-content: flex-end;
+
+}
+
+ .right select{ 
+    margin-top: 20px;
+    margin-left: 350px;
+    font-size: 15px;
+    border: none;
+    font-weight: bold;
+} 
+
+.right  button{
+    margin-top: 18px;
+    margin-left: 30px; 
+    width:90px;
+    height: 30px;
+    background-color:red;
+    color: white;
+    border-radius: 5px;
+    border: red;
+}   
+.right i{
+    margin-top: 20px;
+    font-size: 25px;
+    margin-left: 35px; 
+ }  
+
+
+.sec-nav{
+    display: flex;
+    height: 20px;
+    justify-content: center;
+    justify-content: space-around;
+    background-color: rgb(232, 231, 231);
+    padding: 10px; 
+}
+
+ .sec-nav .s-left{ 
+    display: flex;
+    padding-right: 80px;
+}
+.sec-nav .s-right{
+    display: flex;
+    padding-left: 80px;
+    
+}
+.s-left a{
+    margin-inline: 16px;
+    color: black;
+    text-decoration-line: none;
+}
+.s-right a{
+    margin-inline: 16px;
+    color: black;
+    text-decoration-line: none;
+}
+
+.sec-nav a:hover{
+    color:black;
+    cursor: pointer;
+    font-weight: 600;
+}
+        .container {
+            width: 98%;
+            margin: 40px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .movie-poster {
+            float: left;
+            width: 250px;
+            margin-right: 20px;
+        }
+       .movie-poster img{
+      border: 1px solid transparent;
+      border-radius: 10px;
+      box-shadow: 0 0 6px black;
+      height: 400px;
+}
+        .movie-details {
+            overflow: hidden;
+        }
+        .movie-title {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .rating {
+            color: #e74c3c;
+            margin-bottom: 10px;
+        }
+        .tags, .duration, .genre, .certificate, .release-date {
+            margin-bottom: 10px;
+        }
+        .book-btn {
+            padding: 10px 20px;
+            background-color: #ff4b4b;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .about-movie {
+            margin-top: 40px;
+        }
+        .about-movie h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .about-movie p{
+            font-size: 22px;
+        }
+    
+    </style>
+</head>
+<body>
+
+    <nav class="fnav">
+        <div class="left">
+            <img src="https://logodix.com/logo/2010856.jpg">
+            <div class="searchbar">
+            <div class="icon">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+            <input type="text"  placeholder="Search for Movies , Events , Plays , Sports and Activities">
+        </div>
+        </div>
+         <div class="right">
+        <select class=states">
+            <option value="Ahmedabad">Ahmedabad</option>
+            <option value="Mumbai">Mumbai</option>
+            <option value="Delhi">Delhi</option>
+            <option value="Rajasthan">Rajasthan</option>
+            <option value="Goa">Goa</option>
+        </select>
+            <button>Sign in</button>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+    </nav>
+
+    <nav class="sec-nav">
+        <div class="s-left">
+            <a href="#">Movies</a>
+            <a href="#">Stream</a>
+            <a href="#">Events</a>
+            <a href="#">Plays</a>
+            <a href="#">Sports</a>
+            <a href="#">Activities</a>
+        </div>
+
+        <div class="s-right">
+            <a href="#">ListYourShow</a>
+            <a href="#">Corporates</a>
+            <a href="#">Offers</a>
+            <a href="#">Gift Cards</a>
+            
+        </div>
+        </nav>
+    <div class="container">
+        <div class="movie-poster">
+            <img src="https://assets-in.bmscdn.com/iedb/movies/images/mobile/thumbnail/xlarge/the-amateur-et00437775-1741689777.jpg" alt="The Amateur Poster" width="100%">
+        </div>
+        <div class="movie-details">
+            <div class="movie-title">The Amateur</div>
+            <div class="rating">8.1/10 (97 Votes)</div>
+            <div class="tags">2D, 4DX, MX4D, ICE, IMAX 2D | English</div>
+            <div class="duration">2h 4m</div>
+            <div class="genre">Action, Thriller</div>
+            <div class="certificate">UA 16+</div>
+            <div class="release-date">Released on 10 Apr, 2025</div>
+            <a href="show1.html">
+            <button class="book-btn" onclick="bookTickets()">Book tickets</button>
+            </a>
+        </div>
+        <div style="clear: both;"></div>
+        <div class="about-movie">
+            <h2>About the movie</h2>
+            <p>Charlie Heller (Malek) is a brilliant, but deeply introverted decoder for the CIA working out of a basement office at headquarters in Langley whose life is turned upside down when his wife is killed in a London terrorist attack. When his supervisors refuse to take action, he takes matters into his own hands, embarking on a dangerous trek across the globe to track down those responsible, his intelligence serving as the ultimate weapon for eluding his pursuers and achieving his revenge.</p>
+        </div>
+    </div>
+</body>
+</html>
+
+
